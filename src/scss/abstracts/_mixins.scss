@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "breakpoints" as *;
+@use "colors" as *;
+@use "fonts" as *;
+@use "../base/type-scale" as *;
+
+// Media Query
+@mixin mq($key) {
+    $size: map-get($breakpoints, $key);
+
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+// Colors
+@mixin clr($property, $variable, $shades) {
+    #{$property}: map.get($colors, $variable, $shades);
+    #{$property}: var(--clr-#{$variable}-#{$shades});
+}
+
+// Font Size
+@mixin fs($size) {
+    font-size: map.get($type-scale, small, $size);
+    font-size: var(--fs-#{$size});
+    @include mq(small) {
+        font-size: map.get($type-scale, large, $size);
+        font-size: var(--fs-#{$size});
+    }
+}
+
+// Font Weight
+@mixin fw($weight) {
+    font-weight: map.get($font-weight, $weight);
+    font-weight: var(--fw-#{$weight});
+}
+
+// Line Height
+@mixin lh($height) {
+    line-height: map.get($line-height, small, $height);
+    line-height: var(--lh-#{$height});
+    @include mq(small) {
+        line-height: map.get($line-height, medium, $height);
+        line-height: var(--lh-#{$height});
+    }
+}
+
+// Font Face
+@mixin ff($font, $fallback) {
+    font-family: map.get($fonts, $font);
+    font-family: var(--ff-#{$font}), $fallback;
+}

@@ -1,0 +1,87 @@
+@use "type-scale" as *;
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+/*  ================
+    ===TYPOGRAPHY===
+*/
+
+body {
+    // font-family: var(--ff-primary, sans-serif);
+    @include ff(primary, sans-serif);
+}
+
+h1,
+h2,
+h3 {
+    @include ff(secondary, serif);
+}
+
+h1,
+.h1 {
+    @include fs(800);
+    @include fw(semi-bold);
+    @include lh(100);
+}
+
+h2,
+.h2 {
+    @include fs(600);
+    @include fw(semi-bold);
+    @include lh(200);
+}
+
+h3,
+.h3 {
+    @include fs(500);
+    @include fw(regular);
+    @include lh(100);
+}
+
+p,
+.p,
+a {
+    @include fs(400);
+    @include fw(light);
+    @include lh(300);
+}
+
+.contact {
+    p,
+    .p {
+        @include fw(bold);
+    }
+}
+
+footer p,
+.card-links a,
+.nav-links-container a {
+    @include fs(300);
+}
+
+nav {
+    li {
+        list-style: none;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        @include clr(color, gray-scale, light);
+    }
+    .logo {
+        @include fw(bold);
+        @include clr(color, secondary, 100);
+    }
+}
+
+.hero *,
+.about-me * {
+    @include clr(color, gray-scale, light);
+}
+
+footer {
+    @include clr(color, gray-scale, light);
+}

@@ -1,0 +1,79 @@
+@use "../abstracts/" as *;
+@use "../base/type-scale" as *;
+
+:root {
+    /*  
+    .
+
+    @each -> utk loop
+    utk $color, $shades, sebetulnya namanya terserah.
+    utk $colors, nama harus sesuai sass map-nya.
+
+    $color itu yg -> primary, secondary
+    $shades itu yg -> 100, 200, 300
+
+    @each lagi krn sass map colors-nya adl nested map
+    utk $shades, $value, sebetulnya namanya terserah.
+
+    $value itu yg -> hsl(.., .., ..)
+    .
+    */
+    @each $color, $shades in $colors {
+        @each $shades, $value in $shades {
+            --clr-#{$color}-#{$shades}: #{$value};
+        }
+    }
+
+    @each $font-family, $value in $fonts {
+        --ff-#{$font-family}: #{$value};
+    }
+
+    @each $weight, $value in $font-weight {
+        --fw-#{$weight}: #{$value};
+    }
+
+    @each $breakpoint, $height in $line-height {
+        @if $breakpoint == small {
+            @each $height, $value in $height {
+                --lh-#{$height}: #{$value};
+            }
+        } @else {
+            @include mq(small) {
+                @each $height, $value in $height {
+                    --lh-#{$height}: #{$value};
+                }
+            }
+        }
+    }
+    /*
+    .
+    @each -> utk loop
+    utk $screen-size, $font-size, sebetulnya namanya terserah.
+    utk $type-scale, nama harus sesuai sass map-nya.
+    
+    $screen-size itu yg -> small, large di _type-scale
+    $font-size itu yg-> 300, 400, 500, dst..
+    
+    @if -> utk jika $screen-size sama dgn small, maka
+    menjalankan loop @each.
+    @else utk jika @screen-size sama dgn medium/besar, maka
+    menjalankan media query dgn mixin.
+    .
+    */
+
+    @each $screen-size, $font-size in $type-scale {
+        @if $screen-size == small {
+            //jadi, utk yg screen-size kecil
+            @each $size, $value in $font-size {
+                --fs-#{$size}: #{$value};
+            }
+        } @else {
+            @include mq(small) {
+                //utk screen-size bukan kecil
+                @each $size, $value in $font-size {
+                    --fs-#{$size}: #{$value};
+                }
+            }
+        }
+    }
+}

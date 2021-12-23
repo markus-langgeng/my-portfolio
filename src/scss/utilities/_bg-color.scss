@@ -1,0 +1,13 @@
+@use "../abstracts/colors" as *;
+
+/*  ============================
+    =====BG UTILITY CLASSES=====
+*/
+
+@each $color, $shades in $colors {
+    @each $shades, $value in $shades {
+        .bg-#{$color}-#{$shades} {
+            background: #{$value};
+        }
+    }
+}

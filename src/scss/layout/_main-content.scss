@@ -1,0 +1,36 @@
+@use "../abstracts/mixins" as *;
+/*  ================
+    ======MAIN======
+*/
+.hero {
+    display: grid;
+    @include fs(800);
+    padding: 4em 0;
+
+    &-title {
+        max-width: 8em;
+    }
+
+    @include mq(small) {
+        padding: 2em 0;
+
+        &-title {
+            max-width: 10em;
+        }
+    }
+}
+
+.project,
+.about-me,
+.contact {
+    display: grid;
+    padding: 4em 0;
+}
+
+.card-title {
+    max-width: 15em;
+}
+.card-description,
+.about-me p {
+    max-width: 25em;
+}

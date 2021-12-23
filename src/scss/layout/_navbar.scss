@@ -1,0 +1,74 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
+@use "../base/type-scale" as *;
+/*  ================
+    =====NAVBAR=====
+*/
+header {
+    @include clr(background, primary, 300);
+}
+nav {
+    display: grid;
+    grid-template-columns: 10% 90%;
+}
+.logo {
+    padding: 1em 0;
+}
+.nav-links-container {
+    display: none;
+    grid-column: span 2;
+    margin: auto 0;
+    text-align: right;
+
+    &.active {
+        display: block;
+    }
+
+    a {
+        display: block;
+        border-radius: 1.6px;
+        padding: 1em 0;
+    }
+
+    li {
+        position: relative;
+    }
+
+    a::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 100%;
+        @include clr(background, secondary, 200);
+
+        position: absolute;
+        left: 0;
+        transform: scale(1, 0);
+        transition: all ease-in-out 200ms;
+        transform-origin: bottom;
+    }
+
+    a:hover::after,
+    a:focus::after {
+        transform: scale(1, 1);
+    }
+
+    @include mq(small) {
+        display: block;
+        grid-column: span 1;
+        ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+        a {
+            padding: 1em 1.5em;
+        }
+    }
+}
+
+.toggle-btn {
+    margin-left: auto;
+    @include mq(small) {
+        display: none;
+    }
+}
