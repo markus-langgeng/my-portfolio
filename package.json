@@ -1,20 +1,29 @@
 {
-  "name": "web-portfolio",
+  "name": "my-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Heyy, ini website portfolioku",
   "main": "index.js",
+  "targets": {
+    "main": false
+  },
   "scripts": {
-    "dev": "parcel src/index.html --no-source-maps",
-    "build": "parcel build src/index.html --no-source-maps"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markus-langgeng/my-portfolio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5",
-    "sass": "^1.45.0"
+  "bugs": {
+    "url": "https://github.com/markus-langgeng/my-portfolio/issues"
   },
-  "dependencies": {
-    "autoprefixer": "^10.4.0"
+  "homepage": "https://github.com/markus-langgeng/my-portfolio#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1",
+    "sass": "^1.45.1"
   }
 }
