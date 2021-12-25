@@ -1,4 +1,5 @@
 @use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
 /*  ================
     ======MAIN======
 */
@@ -33,4 +34,11 @@
 .card-description,
 .about-me p {
     max-width: 25em;
+}
+
+h1:target,
+h2:target,
+h3:target {
+    outline: 0.7px solid #706ee2;
+    outline-offset: 3px;
 }

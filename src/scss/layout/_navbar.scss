@@ -24,7 +24,7 @@ nav {
 
     transform: scale(1, 0);
     transform-origin: top;
-    transition: transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out 50ms;
 
     &.active {
         transform: scale(1, 1);
@@ -51,13 +51,13 @@ nav {
         padding: 1em 0;
         width: 100%;
         opacity: 0;
-        transition: transform ease-in-out 200ms, opacity 100ms ease-in-out;
+        transition: transform ease-in-out 200ms, opacity 120ms ease-in-out;
     }
 
     a::after {
         content: "";
         display: inline-block;
-        height: 3px;
+        height: 2px;
         width: 100%;
         bottom: 5px;
         @include clr(background, secondary, 200);
@@ -68,8 +68,9 @@ nav {
         transition: all ease-in-out 300ms;
     }
 
-    a:hover {
-        transform: scale(1.06) translateY(-5px);
+    a:hover,
+    a:focus {
+        transform: scale(1.001) translateY(-5px);
     }
     a:hover::after,
     a:focus::after {
@@ -77,6 +78,9 @@ nav {
     }
     a:active::after {
         @include clr(background, secondary, 100);
+    }
+    a:active {
+        @include clr(color, secondary, 100);
     }
 
     @include mq(small) {

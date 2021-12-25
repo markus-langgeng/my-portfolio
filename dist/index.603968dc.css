@@ -119,8 +119,7 @@ body {
 }
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 /* Make images easier to work with */
 img,
@@ -144,13 +143,15 @@ select {
   *,
 *::before,
 *::after {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+a:focus {
+  outline: 0.7px solid #706ee2;
+  outline-offset: 2px;
 }
 /*  ================
     ===TYPOGRAPHY===
@@ -349,7 +350,7 @@ nav {
   margin: auto 0;
   transform: scale(1, 0);
   transform-origin: top;
-  transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out 50ms;
 }
 .nav-links-container.active {
   transform: scale(1, 1);
@@ -364,8 +365,6 @@ nav {
 .nav-links-container li {
   position: relative;
   margin-left: auto;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .nav-links-container a {
@@ -374,12 +373,12 @@ nav {
   padding: 1em 0;
   width: 100%;
   opacity: 0;
-  transition: transform ease-in-out 200ms, opacity 100ms ease-in-out;
+  transition: transform ease-in-out 200ms, opacity 120ms ease-in-out;
 }
 .nav-links-container a::after {
   content: "";
   display: inline-block;
-  height: 3px;
+  height: 2px;
   width: 100%;
   bottom: 5px;
   background: #706ee2;
@@ -389,8 +388,9 @@ nav {
   transform: scale(0, 1);
   transition: all ease-in-out 300ms;
 }
-.nav-links-container a:hover {
-  transform: scale(1.06) translateY(-5px);
+.nav-links-container a:hover,
+.nav-links-container a:focus {
+  transform: scale(1.001) translateY(-5px);
 }
 .nav-links-container a:hover::after,
 .nav-links-container a:focus::after {
@@ -399,6 +399,10 @@ nav {
 .nav-links-container a:active::after {
   background: #b9b8ff;
   background: var(--clr-secondary-100);
+}
+.nav-links-container a:active {
+  color: #b9b8ff;
+  color: var(--clr-secondary-100);
 }
 @media (min-width: 40em) {
   .nav-links-container {
@@ -441,7 +445,7 @@ nav {
 .hero-title {
   max-width: 8em;
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   .hero {
     padding: 2em 0;
   }
@@ -461,6 +465,12 @@ nav {
 .card-description,
 .about-me p {
   max-width: 25em;
+}
+h1:target,
+h2:target,
+h3:target {
+  outline: 0.7px solid #706ee2;
+  outline-offset: 3px;
 }
 footer {
   background: var(--clr-primary-300);

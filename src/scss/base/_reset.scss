@@ -80,3 +80,9 @@ select {
         scroll-behavior: auto !important;
     }
 }
+
+//custom reset
+a:focus {
+    outline: 0.7px solid #706ee2;
+    outline-offset: 2px;
+}
