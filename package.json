@@ -9,7 +9,7 @@
   "scripts": {
     "sass-watch": "sass -w src/scss:public/css",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --dist-dir ./public --no-optimize"
+    "build": "parcel build src/index.html --no-optimize --public-url ."
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,14 @@
   "homepage": "https://github.com/markus-langgeng/my-portfolio#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
+    "autoprefixer": "^10.4.0",
     "parcel": "^2.0.1",
-    "sass": "^1.45.1"
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-preset-env": "^7.1.0",
+    "postcss-sort-media-queries": "^4.2.1",
+    "postcss-uncss": "^0.17.0",
+    "sass": "^1.45.1",
+    "uncss": "^0.17.3"
   }
 }

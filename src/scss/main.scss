@@ -3,3 +3,7 @@
 @use "components" as *;
 @use "layout" as *;
 @use "utilities" as *;
+
+body {
+    color: lch(53 105 40);
+}
