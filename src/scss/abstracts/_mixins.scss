@@ -23,8 +23,8 @@
 @mixin fs($size) {
     font-size: map.get($type-scale, small, $size);
     font-size: var(--fs-#{$size});
-    @include mq(small) {
-        font-size: map.get($type-scale, large, $size);
+    @include mq(medium) {
+        font-size: map.get($type-scale, medium, $size);
         font-size: var(--fs-#{$size});
     }
 }
@@ -39,7 +39,7 @@
 @mixin lh($height) {
     line-height: map.get($line-height, small, $height);
     line-height: var(--lh-#{$height});
-    @include mq(small) {
+    @include mq(medium) {
         line-height: map.get($line-height, medium, $height);
         line-height: var(--lh-#{$height});
     }

@@ -1,5 +1,13 @@
+@use "../abstracts/mixins" as *;
+
 .container {
     padding: 0 1.8rem;
-    max-width: 1000px;
     margin: 0 auto;
+
+    @include mq(small) {
+        max-width: 750px;
+    }
+    @include mq(medium) {
+        max-width: 990px;
+    }
 }

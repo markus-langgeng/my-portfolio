@@ -7,6 +7,7 @@
     "main": false
   },
   "scripts": {
+    "sass-watch": "sass -w src/scss:public/css",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html --dist-dir ./public --no-optimize"
   },

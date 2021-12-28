@@ -59,14 +59,14 @@
   --fs-700: 2.1rem;
   --fs-800: 2.5rem;
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   :root {
     --lh-100: 1.087em;
     --lh-200: 1.5em;
     --lh-300: 1.8em;
   }
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   :root {
     --fs-300: 0.875rem;
     --fs-400: 1.125rem;
@@ -175,14 +175,14 @@ h1,
   line-height: 1.25em;
   line-height: var(--lh-100);
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   h1,
 .h1 {
     font-size: 4.25rem;
     font-size: var(--fs-800);
   }
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   h1,
 .h1 {
     line-height: 1.087em;
@@ -198,14 +198,14 @@ h2,
   line-height: 1.4em;
   line-height: var(--lh-200);
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   h2,
 .h2 {
     font-size: 2.827rem;
     font-size: var(--fs-600);
   }
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   h2,
 .h2 {
     line-height: 1.5em;
@@ -218,21 +218,21 @@ h3,
   font-size: var(--fs-500);
   font-weight: 400;
   font-weight: var(--fw-regular);
-  line-height: 1.25em;
-  line-height: var(--lh-100);
+  line-height: 1.4em;
+  line-height: var(--lh-200);
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   h3,
 .h3 {
     font-size: 2rem;
     font-size: var(--fs-500);
   }
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   h3,
 .h3 {
-    line-height: 1.087em;
-    line-height: var(--lh-100);
+    line-height: 1.5em;
+    line-height: var(--lh-200);
   }
 }
 p,
@@ -245,7 +245,7 @@ a {
   line-height: 1.65em;
   line-height: var(--lh-300);
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   p,
 .p,
 a {
@@ -253,7 +253,7 @@ a {
     font-size: var(--fs-400);
   }
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   p,
 .p,
 a {
@@ -272,7 +272,7 @@ footer p,
   font-size: 0.875rem;
   font-size: var(--fs-300);
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   footer p,
 .card-links a,
 .nav-links-container a {
@@ -306,6 +306,53 @@ nav .logo {
 footer {
   color: #d6d5f1;
   color: var(--clr-gray-scale-light);
+}
+/*  ==============
+    =====CARD=====
+*/
+.card {
+  --flow-space: 3.5em;
+  display: grid;
+  gap: 1.5em 5rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "title" "image" "text" "links";
+}
+.card :nth-child(1) {
+  grid-area: title;
+}
+.card :nth-child(2) {
+  grid-area: image;
+}
+.card :nth-child(3) {
+  grid-area: text;
+}
+.card :nth-child(4) {
+  grid-area: links;
+}
+.card-text {
+  --flow-space: 1em;
+}
+@media (min-width: 40em) {
+  .card {
+    --flow-space: 6em;
+    grid-template-areas: "title image" "text image" "links links";
+  }
+  .card:nth-child(odd) {
+    grid-template-areas: "image title" "image text" "links links";
+  }
+  .card:nth-child(odd) .card-links {
+    justify-self: end;
+  }
+}
+.card-img {
+  background: lightblue;
+}
+.card-title h3 {
+  display: inline;
+  background-image: linear-gradient(var(--clr-secondary-300), var(--clr-secondary-300));
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
 }
 .toggle-btn {
   display: flex;
@@ -436,14 +483,14 @@ nav {
   font-size: var(--fs-800);
   padding: 4em 0;
 }
-@media (min-width: 40em) {
+@media (min-width: 65em) {
   .hero {
     font-size: 4.25rem;
     font-size: var(--fs-800);
   }
 }
 .hero-title {
-  max-width: 8em;
+  max-width: 10em;
 }
 @media (min-width: 65em) {
   .hero {
@@ -459,16 +506,21 @@ nav {
   display: grid;
   padding: 4em 0;
 }
-.card-title {
+@media (min-width: 65em) {
+  .project,
+.about-me,
+.contact {
+    padding: 7em 0;
+  }
+}
+.card-title h3 {
   max-width: 15em;
 }
 .card-description,
 .about-me p {
   max-width: 25em;
 }
-h1:target,
-h2:target,
-h3:target {
+:target {
   outline: 0.7px solid #706ee2;
   outline-offset: 3px;
 }
@@ -478,8 +530,17 @@ footer {
 }
 .container {
   padding: 0 1.8rem;
-  max-width: 1000px;
   margin: 0 auto;
+}
+@media (min-width: 40em) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 65em) {
+  .container {
+    max-width: 990px;
+  }
 }
 .flow > * + * {
   margin-top: 1em;

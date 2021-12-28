@@ -1,0 +1,68 @@
+@use "../abstracts/mixins" as *;
+/*  ==============
+    =====CARD=====
+*/
+
+.card {
+    --flow-space: 3.5em;
+    display: grid;
+    gap: 1.5em 5rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        "title"
+        "image"
+        "text"
+        "links";
+
+    :nth-child(1) {
+        grid-area: title;
+    }
+    :nth-child(2) {
+        grid-area: image;
+    }
+    :nth-child(3) {
+        grid-area: text;
+    }
+    :nth-child(4) {
+        grid-area: links;
+    }
+
+    &-text {
+        --flow-space: 1em;
+    }
+
+    @include mq(small) {
+        --flow-space: 6em;
+        grid-template-areas:
+            "title image"
+            "text image"
+            "links links";
+
+        &:nth-child(odd) {
+            grid-template-areas:
+                "image title"
+                "image text"
+                "links links";
+
+            .card-links {
+                justify-self: end;
+            }
+        }
+    }
+
+    &-img {
+        background: lightblue;
+    }
+
+    &-title h3 {
+        display: inline;
+        background-image: linear-gradient(
+            var(--clr-secondary-300),
+            var(--clr-secondary-300)
+        );
+        background-size: 100% 3px;
+        background-repeat: no-repeat;
+        background-position: 0 bottom;
+        // text-decoration: underline blue solid;
+    }
+}
