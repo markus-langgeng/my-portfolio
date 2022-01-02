@@ -2,9 +2,6 @@
   "plugins": {
     "postcss-sort-media-queries": {},
     "autoprefixer": {},
-    "postcss-preset-env": {},
-    "postcss-uncss": {
-      "html": "./src/index.html"
-    }
+    "postcss-preset-env": {}
   }
 }

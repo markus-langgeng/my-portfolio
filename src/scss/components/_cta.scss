@@ -1,0 +1,56 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
+
+/*  ========================
+    =====CALL TO ACTION=====
+*/
+.cta {
+    --flow-space: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 13.5rem;
+    text-decoration: none;
+
+    padding: 0.5rem 1.5rem;
+
+    border: 5px solid #f4f4ff;
+    border-radius: 2.8125rem;
+    @include clr(background, secondary, 300);
+    @include fw(bold);
+    @include fs(300);
+
+    transition: all ease-out 300ms;
+
+    &:focus,
+    &:hover {
+        transform: scale(1.05) translateY(-3px);
+        @include clr(background, secondary, 400);
+    }
+
+    &:active {
+        @include clr(background, secondary, 500);
+    }
+}
+
+.arrow-svg {
+    @include clr(fill, gray-scale, light);
+    width: 27px;
+    height: 27px;
+}
+
+// dan svg lain
+.github-svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.visually-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

@@ -6,6 +6,9 @@
 */
 header {
     @include clr(background, primary, 300);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 nav {
     position: relative;
@@ -17,8 +20,8 @@ nav {
 }
 .nav-links-container {
     position: absolute;
-    top: 4em;
-    right: 2em;
+    top: 3.6em;
+    right: 0;
     grid-column: span 2;
     margin: auto 0;
 
@@ -37,6 +40,8 @@ nav {
 
     ul {
         text-align: end;
+        padding: 0 1.8em;
+        @include clr(background, primary, 300);
     }
 
     li {

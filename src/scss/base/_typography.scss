@@ -1,3 +1,4 @@
+// @use "sass:color" as *;
 @use "type-scale" as *;
 @use "../abstracts/colors" as *;
 @use "../abstracts/mixins" as *;
@@ -77,11 +78,22 @@ nav {
     }
 }
 
+p {
+    // @include clr(color, gray-scale, dark);
+    color: rgba(hsl(0, 0%, 12%), 0.8);
+}
+
 .hero *,
-.about-me * {
+.about-me *,
+footer {
     @include clr(color, gray-scale, light);
 }
 
-footer {
-    @include clr(color, gray-scale, light);
+.about-me p,
+footer p {
+    color: rgba(hsl(242, 81%, 94%), 0.7);
+}
+
+.text-container p {
+    @include fw(light);
 }

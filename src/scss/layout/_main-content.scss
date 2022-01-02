@@ -3,6 +3,8 @@
 /*  ================
     ======MAIN======
 */
+
+//hero
 .hero {
     display: grid;
     @include fs(800);
@@ -32,6 +34,8 @@
     }
 }
 
+//project
+
 .card-title h3 {
     max-width: 15em;
 }
@@ -40,7 +44,60 @@
     max-width: 25em;
 }
 
-:target {
-    outline: 0.7px solid #706ee2;
-    outline-offset: 3px;
+.card-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    a {
+        display: flex;
+    }
+}
+
+//contact
+.contact-form {
+    display: grid;
+    gap: 2rem 5rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        "name"
+        "email"
+        "message"
+        "text";
+
+    @include mq(small) {
+        grid-template-areas:
+            "name text"
+            "email text"
+            "message blank";
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        max-width: 30rem;
+    }
+}
+
+.name-container {
+    grid-area: name;
+}
+.email-container {
+    grid-area: email;
+}
+.message-container {
+    grid-area: message;
+}
+.text-container {
+    grid-area: text;
+}
+
+//footer
+footer {
+    .container {
+        display: flex;
+    }
+    p {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

@@ -1,6 +1,6 @@
 @use "../abstracts/mixins" as *;
 /*  ==============
-    =====CARD=====
+=====CARD=====
 */
 
 .card {
@@ -31,11 +31,15 @@
     }
     .card-img {
         grid-area: image;
-
-        // border: 1px solid black;
+        max-height: 25rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        overflow: hidden;
+        border-radius: 0.8rem;
+        box-shadow: 0 3px 23px 0 rgba(0, 0, 0, 0.12);
         img {
-            max-width: 100%;
-            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 0.8rem;
         }
     }
     .card-text {
@@ -43,6 +47,7 @@
     }
     .card-links {
         grid-area: links;
+        align-self: start;
     }
 
     &-text {
@@ -54,13 +59,15 @@
         grid-template-areas:
             "title image"
             "text image"
-            "links links";
+            "text links"
+            "text blank-2";
 
         &:nth-child(odd) {
             grid-template-areas:
                 "image title"
                 "image text"
-                "links links";
+                "links text"
+                "blank-2 text";
 
             .card-links {
                 justify-self: end;
