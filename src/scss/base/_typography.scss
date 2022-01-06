@@ -74,7 +74,7 @@ nav {
     }
     .logo {
         @include fw(bold);
-        @include clr(color, secondary, 100);
+        @include clr(color, gray-scale, light);
     }
 }
 

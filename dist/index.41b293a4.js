@@ -462,9 +462,12 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _hamMenu = require("./ham-menu");
 var _hamMenuDefault = parcelHelpers.interopDefault(_hamMenu);
+var _observers = require("./observers");
+var _observersDefault = parcelHelpers.interopDefault(_observers);
 _hamMenuDefault.default();
+_observersDefault.default();
 
-},{"./ham-menu":"2EAyE","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"2EAyE":[function(require,module,exports) {
+},{"./ham-menu":"2EAyE","./observers":"bhPin","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"2EAyE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function toggleNavBar() {
@@ -510,6 +513,44 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["dpcih","iWSTb"], "iWSTb", "parcelRequire82ef")
+},{}],"bhPin":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function navbarObserver() {
+    const header = document.querySelector("header");
+    const lightBgs = document.querySelectorAll(".light-bg");
+    const faders = document.querySelectorAll(".fade-in");
+    const lightBgOpt = {
+        rootMargin: "-53px 0px -90% 0px"
+    };
+    const appearOpts = {
+        threshold: 0.7,
+        rootMargin: "0px 0px -100px 0px"
+    };
+    const lightBgObserver = new IntersectionObserver(function(entries, lightBgObserver) {
+        entries.forEach((entry)=>{
+            if (!entry.isIntersecting) header.classList.remove("nav-scrolled-light");
+            else header.classList.add("nav-scrolled-light");
+        });
+    }, lightBgOpt);
+    lightBgs.forEach((lightBg)=>{
+        lightBgObserver.observe(lightBg);
+    });
+    const appearOnScroll1 = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach((entry)=>{
+            if (!entry.isIntersecting) return;
+            else {
+                entry.target.classList.add("appear");
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOpts);
+    faders.forEach((fader)=>{
+        appearOnScroll1.observe(fader);
+    });
+}
+exports.default = navbarObserver;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["dpcih","iWSTb"], "iWSTb", "parcelRequire82ef")
 
 //# sourceMappingURL=index.41b293a4.js.map

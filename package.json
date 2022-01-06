@@ -9,7 +9,7 @@
   "scripts": {
     "sass": "sass -w src/scss:dist",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-optimize --public-url ."
+    "build": "parcel build src/index.html --public-url ."
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "postcss-sort-media-queries": "^4.2.1",
     "postcss-uncss": "^0.17.0",
     "sass": "^1.45.1",
+    "sharp": "^0.29.3",
     "uncss": "^0.17.3"
   }
 }

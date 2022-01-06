@@ -220,9 +220,9 @@ nav .logo {
   font-weight: 700;
   font-weight: 700;
   font-weight: var(--fw-bold);
-  color: #b9b8ff;
-  color: #b9b8ff;
-  color: var(--clr-secondary-100);
+  color: #e4e3fc;
+  color: #e4e3fc;
+  color: var(--clr-gray-scale-light);
 }
 p {
   color: rgba(31, 31, 31, 0.8);
@@ -273,12 +273,15 @@ footer p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: auto;
   overflow: hidden;
   border-radius: 0.8rem;
   box-shadow: 0 3px 23px 0 rgba(0, 0, 0, 0.12);
 }
 .card .card-img img {
   border-radius: 0.8rem;
+  max-width: 100%;
+  height: auto;
 }
 .card .card-text {
   grid-area: text;
@@ -361,10 +364,10 @@ footer p {
 .toggle-btn .bar {
   width: 100%;
   height: 4px;
-  background: #b9b8ff;
-  background: #b9b8ff;
-  background: var(--clr-secondary-100);
-  border-radius: 0 0 0 3px;
+  background: #e4e3fc;
+  background: #e4e3fc;
+  background: var(--clr-gray-scale-light);
+  border-radius: 0 0 0 0px;
 }
 .toggle-btn .bar:nth-child(3) {
   width: 60%;
@@ -373,12 +376,12 @@ footer p {
     =====NAVBAR=====
 */
 header {
-  background: #3b3b3b;
-  background: #3b3b3b;
-  background: var(--clr-primary-300);
   position: fixed;
   width: 100%;
   z-index: 999;
+  background: #3b3b3b;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.07);
+  transition: background 300ms ease-in-out;
 }
 nav {
   position: relative;
@@ -413,6 +416,7 @@ nav {
 }
 .nav-links-container ul {
   padding: 0 1.8em;
+  transition: background 300ms ease-in-out;
   background: #3b3b3b;
   background: #3b3b3b;
   background: var(--clr-primary-300);
@@ -466,6 +470,22 @@ nav {
 }
 .toggle-btn {
   margin-left: auto;
+}
+.nav-scrolled-light {
+  background: #f5f5ff;
+}
+.nav-scrolled-light a {
+  color: #1f1f1f;
+  color: #1f1f1f;
+  color: var(--clr-gray-scale-dark);
+}
+.nav-scrolled-light .bar {
+  background: #1f1f1f;
+  background: #1f1f1f;
+  background: var(--clr-gray-scale-dark);
+}
+.nav-scrolled-light ul {
+  background: #f5f5ff;
 }
 /*  ================
     ======MAIN======
@@ -579,6 +599,14 @@ footer {
 .bg-gray-scale-dark {
   background: #1f1f1f;
 }
+.fade-in {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+.fade-in.appear {
+  transform: translateX(0%);
+  opacity: 1;
+}
 @media (min-width: 40em){
   .card {
     --flow-space: 6em;
@@ -598,6 +626,7 @@ footer {
   .nav-links-container ul {
     display: flex;
     justify-content: flex-end;
+    background: unset;
   }
   .nav-links-container a {
     opacity: 1;

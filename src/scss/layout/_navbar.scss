@@ -5,10 +5,14 @@
     =====NAVBAR=====
 */
 header {
-    @include clr(background, primary, 300);
+    // @include clr(background, primary, 300);
     position: fixed;
     width: 100%;
     z-index: 999;
+
+    background: hsl(0, 0%, 23%);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.07);
+    transition: background 300ms ease-in-out;
 }
 nav {
     position: relative;
@@ -41,6 +45,7 @@ nav {
     ul {
         text-align: end;
         padding: 0 1.8em;
+        transition: background 300ms ease-in-out;
         @include clr(background, primary, 300);
     }
 
@@ -89,13 +94,13 @@ nav {
     }
 
     @include mq(small) {
-        // display: block;
         transform: scale(1, 1);
         top: 0.5em;
         grid-column: span 1;
         ul {
             display: flex;
             justify-content: flex-end;
+            background: unset;
         }
         a {
             opacity: 1;
@@ -110,3 +115,21 @@ nav {
         display: none;
     }
 }
+
+//navbar-intersection-observer
+.nav-scrolled-light {
+    background: hsl(240, 100%, 98%);
+    a {
+        @include clr(color, gray-scale, dark);
+    }
+    .bar {
+        @include clr(background, gray-scale, dark);
+    }
+    ul {
+        background: hsl(240, 100%, 98%);
+    }
+}
+
+// .nav-scrolled-dark {
+//     background: hsl(0, 0%, 23%);
+// }

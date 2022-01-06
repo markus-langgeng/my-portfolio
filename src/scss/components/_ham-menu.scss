@@ -15,8 +15,8 @@
     .bar {
         width: 100%;
         height: 4px;
-        @include clr(background, secondary, 100);
-        border-radius: 0 0 0 3px;
+        @include clr(background, gray-scale, light);
+        border-radius: 0 0 0 0px;
 
         &:nth-child(3) {
             width: 60%;
