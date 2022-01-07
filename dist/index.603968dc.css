@@ -87,9 +87,6 @@ ol[role=list] {
   list-style: none;
 }
 /* Set core root defaults */
-html[focus-within] {
-  scroll-behavior: smooth;
-}
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -102,6 +99,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 /* A elements that don't have a class get default styles */
 a:not([class]) {
@@ -130,50 +128,39 @@ a:focus {
     ===TYPOGRAPHY===
 */
 body {
-  font-family: "Montserrat";
-  font-family: Montserrat, sans-serif;
-  font-family: var(--ff-primary), sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: var(--ff-primary);
 }
 h1,
 h2,
 h3 {
-  font-family: "Source Serif Pro";
-  font-family: Source Serif Pro, serif;
-  font-family: var(--ff-secondary), serif;
+  font-family: "Source Serif Pro", serif;
+  font-family: var(--ff-secondary);
 }
 h1,
 .h1 {
   font-size: 2.5rem;
-  font-size: 2.5rem;
   font-size: var(--fs-800);
   font-weight: 600;
-  font-weight: 600;
   font-weight: var(--fw-semi-bold);
-  line-height: 1.25em;
   line-height: 1.25em;
   line-height: var(--lh-100);
 }
 h2,
 .h2 {
   font-size: 1.853rem;
-  font-size: 1.853rem;
   font-size: var(--fs-600);
   font-weight: 600;
-  font-weight: 600;
   font-weight: var(--fw-semi-bold);
-  line-height: 1.4em;
   line-height: 1.4em;
   line-height: var(--lh-200);
 }
 h3,
 .h3 {
   font-size: 1.563rem;
-  font-size: 1.563rem;
   font-size: var(--fs-500);
   font-weight: 400;
-  font-weight: 400;
   font-weight: var(--fw-regular);
-  line-height: 1.4em;
   line-height: 1.4em;
   line-height: var(--lh-200);
 }
@@ -181,25 +168,20 @@ p,
 .p,
 a {
   font-size: 1rem;
-  font-size: 1rem;
   font-size: var(--fs-400);
   font-weight: 300;
-  font-weight: 300;
   font-weight: var(--fw-light);
-  line-height: 1.65em;
   line-height: 1.65em;
   line-height: var(--lh-300);
 }
 .contact p,
 .contact .p {
   font-weight: 700;
-  font-weight: 700;
   font-weight: var(--fw-bold);
 }
 footer p,
 .card-links a,
 .nav-links-container a {
-  font-size: 0.875rem;
   font-size: 0.875rem;
   font-size: var(--fs-300);
 }
@@ -213,14 +195,11 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #e4e3fc;
-  color: #e4e3fc;
   color: var(--clr-gray-scale-light);
 }
 nav .logo {
   font-weight: 700;
-  font-weight: 700;
   font-weight: var(--fw-bold);
-  color: #e4e3fc;
   color: #e4e3fc;
   color: var(--clr-gray-scale-light);
 }
@@ -231,7 +210,6 @@ p {
 .about-me *,
 footer {
   color: #e4e3fc;
-  color: #e4e3fc;
   color: var(--clr-gray-scale-light);
 }
 .about-me p,
@@ -239,7 +217,6 @@ footer p {
   color: rgba(228, 227, 252, 0.7);
 }
 .text-container p {
-  font-weight: 300;
   font-weight: 300;
   font-weight: var(--fw-light);
 }
@@ -249,7 +226,6 @@ footer p {
 .card {
   --flow-space: 3.5em;
   display: grid;
-  grid-gap: 1.5em 5rem;
   gap: 1.5em 5rem;
   grid-auto-columns: 1fr;
   grid-template-areas: "title" "image" "text" "links";
@@ -259,7 +235,6 @@ footer p {
 }
 .card .card-title h3 {
   display: inline;
-  background-image: linear-gradient(#3d3bc4, #3d3bc4);
   background-image: linear-gradient(var(--clr-secondary-300), var(--clr-secondary-300));
   background-size: 100% 3px;
   background-repeat: no-repeat;
@@ -267,13 +242,13 @@ footer p {
 }
 .card .card-img {
   grid-area: image;
-  max-height: 25rem;
   margin-left: auto;
   margin-right: auto;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   height: auto;
+  max-height: 25rem;
   overflow: hidden;
   border-radius: 0.8rem;
   box-shadow: 0 3px 23px 0 rgba(0, 0, 0, 0.12);
@@ -307,12 +282,9 @@ footer p {
   border: 5px solid #f4f4ff;
   border-radius: 2.8125rem;
   background: #3d3bc4;
-  background: #3d3bc4;
   background: var(--clr-secondary-300);
   font-weight: 700;
-  font-weight: 700;
   font-weight: var(--fw-bold);
-  font-size: 0.875rem;
   font-size: 0.875rem;
   font-size: var(--fs-300);
   transition: all ease-out 300ms;
@@ -320,16 +292,13 @@ footer p {
 .cta:focus, .cta:hover {
   transform: scale(1.05) translateY(-3px);
   background: #211fa8;
-  background: #211fa8;
   background: var(--clr-secondary-400);
 }
 .cta:active {
   background: #0e0c88;
-  background: #0e0c88;
   background: var(--clr-secondary-500);
 }
 .arrow-svg {
-  fill: #e4e3fc;
   fill: #e4e3fc;
   fill: var(--clr-gray-scale-light);
   width: 27px;
@@ -365,7 +334,6 @@ footer p {
   width: 100%;
   height: 4px;
   background: #e4e3fc;
-  background: #e4e3fc;
   background: var(--clr-gray-scale-light);
   border-radius: 0 0 0 0px;
 }
@@ -381,7 +349,7 @@ header {
   z-index: 999;
   background: #3b3b3b;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.07);
-  transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in;
 }
 nav {
   position: relative;
@@ -408,16 +376,10 @@ nav {
   opacity: 1;
   transition: opacity 200ms ease-in-out 300ms;
 }
-[dir="ltr"] .nav-links-container ul{
-  text-align: right;
-}
-[dir="rtl"] .nav-links-container ul{
-  text-align: left;
-}
 .nav-links-container ul {
+  text-align: end;
   padding: 0 1.8em;
-  transition: background 300ms ease-in-out;
-  background: #3b3b3b;
+  transition: background 300ms ease-in;
   background: #3b3b3b;
   background: var(--clr-primary-300);
 }
@@ -443,7 +405,6 @@ nav {
   width: 100%;
   bottom: 5px;
   background: #706ee2;
-  background: #706ee2;
   background: var(--clr-secondary-200);
   position: absolute;
   left: 0;
@@ -460,11 +421,9 @@ nav {
 }
 .nav-links-container a:active::after {
   background: #b9b8ff;
-  background: #b9b8ff;
   background: var(--clr-secondary-100);
 }
 .nav-links-container a:active {
-  color: #b9b8ff;
   color: #b9b8ff;
   color: var(--clr-secondary-100);
 }
@@ -476,11 +435,9 @@ nav {
 }
 .nav-scrolled-light a {
   color: #1f1f1f;
-  color: #1f1f1f;
   color: var(--clr-gray-scale-dark);
 }
 .nav-scrolled-light .bar {
-  background: #1f1f1f;
   background: #1f1f1f;
   background: var(--clr-gray-scale-dark);
 }
@@ -491,8 +448,6 @@ nav {
     ======MAIN======
 */
 .hero {
-  display: grid;
-  font-size: 2.5rem;
   font-size: 2.5rem;
   font-size: var(--fs-800);
   padding: 4em 0;
@@ -503,8 +458,17 @@ nav {
 .project,
 .about-me,
 .contact {
-  display: grid;
   padding: 4em 0;
+}
+.container .project {
+  position: relative;
+}
+.project::before {
+  content: url(bg-portfolio2.42cbec6a.svg);
+  position: absolute;
+  top: -150px;
+  left: -180px;
+  z-index: -1;
 }
 .card-title h3 {
   max-width: 15em;
@@ -523,7 +487,6 @@ nav {
 }
 .contact-form {
   display: grid;
-  grid-gap: 2rem 5rem;
   gap: 2rem 5rem;
   grid-auto-columns: 1fr;
   grid-template-areas: "name" "email" "message" "text";
@@ -553,7 +516,6 @@ footer p {
   margin-right: auto;
 }
 footer {
-  background: #3b3b3b;
   background: var(--clr-primary-300);
   padding: 1em 0;
 }
@@ -562,7 +524,6 @@ footer {
   margin: 0 auto;
 }
 .flow > * + * {
-  margin-top: 1em;
   margin-top: 1em;
   margin-top: var(--flow-space, 1em);
 }
@@ -659,68 +620,57 @@ footer {
   h1,
 .h1 {
     font-size: 4.25rem;
-    font-size: 2.5rem;
     font-size: var(--fs-800);
   }
   h1,
 .h1 {
     line-height: 1.087em;
-    line-height: 1.25em;
     line-height: var(--lh-100);
   }
   h2,
 .h2 {
     font-size: 2.827rem;
-    font-size: 1.853rem;
     font-size: var(--fs-600);
   }
   h2,
 .h2 {
     line-height: 1.5em;
-    line-height: 1.4em;
     line-height: var(--lh-200);
   }
   h3,
 .h3 {
     font-size: 2rem;
-    font-size: 1.563rem;
     font-size: var(--fs-500);
   }
   h3,
 .h3 {
     line-height: 1.5em;
-    line-height: 1.4em;
     line-height: var(--lh-200);
   }
   p,
 .p,
 a {
     font-size: 1.125rem;
-    font-size: 1rem;
     font-size: var(--fs-400);
   }
   p,
 .p,
 a {
     line-height: 1.8em;
-    line-height: 1.65em;
     line-height: var(--lh-300);
   }
   footer p,
 .card-links a,
 .nav-links-container a {
     font-size: 0.875rem;
-    font-size: 0.875rem;
     font-size: var(--fs-300);
   }
   .cta {
-    font-size: 0.875rem;
     font-size: 0.875rem;
     font-size: var(--fs-300);
   }
   .hero {
     font-size: 4.25rem;
-    font-size: 2.5rem;
     font-size: var(--fs-800);
   }
   .hero {
@@ -734,14 +684,15 @@ a {
 .contact {
     padding: 7em 0;
   }
+  .project::before {
+    top: -65px;
+    left: -200px;
+  }
   .container {
     max-width: 990px;
   }
 }
 @media (prefers-reduced-motion: reduce){
-  html[focus-within] {
-    scroll-behavior: auto;
-  }
   html:focus-within {
     scroll-behavior: auto;
   }

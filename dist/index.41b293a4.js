@@ -460,28 +460,48 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"iWSTb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _lazyLoad = require("./lazy-load");
+var _lazyLoadDefault = parcelHelpers.interopDefault(_lazyLoad);
 var _hamMenu = require("./ham-menu");
 var _hamMenuDefault = parcelHelpers.interopDefault(_hamMenu);
 var _observers = require("./observers");
 var _observersDefault = parcelHelpers.interopDefault(_observers);
+_lazyLoadDefault.default();
 _hamMenuDefault.default();
 _observersDefault.default();
 
-},{"./ham-menu":"2EAyE","./observers":"bhPin","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"2EAyE":[function(require,module,exports) {
+},{"./lazy-load":"fg1M0","./ham-menu":"2EAyE","./observers":"bhPin","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"fg1M0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-function toggleNavBar() {
-    const toggleBtn = document.getElementsByClassName("toggle-btn")[0];
-    const navLinks = document.getElementsByClassName("nav-links-container")[0];
-    const navLinksAnchor = document.getElementsByClassName("nav-anchor");
-    toggleBtn.addEventListener("click", ()=>{
-        navLinks.classList.toggle("active");
-    });
-    for(var i = 0; i < navLinksAnchor.length; i++)navLinksAnchor[i].addEventListener("click", ()=>{
-        navLinks.classList.remove("active");
+function lazyLoadingObserver() {
+    const images = document.querySelectorAll("[data-lazy]");
+    const imageOpts = {
+        threshold: 0,
+        rootMargin: "0px 0px 400px 0px"
+    };
+    function preloadImage(img) {
+        const src = img.getAttribute("data-lazy");
+        if (!src) return;
+        img.src = src;
+        img.removeAttribute("data-lazy");
+    }
+    const imageObserver1 = new IntersectionObserver((entries, imageObserver)=>{
+        entries.forEach((entry)=>{
+            if (!entry.isIntersecting) {
+                console.log(entry);
+                return;
+            } else {
+                console.log(entry);
+                preloadImage(entry.target);
+                imageObserver.unobserve(entry.target);
+            }
+        });
+    }, imageOpts);
+    images.forEach((image)=>{
+        imageObserver1.observe(image);
     });
 }
-exports.default = toggleNavBar;
+exports.default = lazyLoadingObserver;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -513,7 +533,23 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"bhPin":[function(require,module,exports) {
+},{}],"2EAyE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function toggleNavBar() {
+    const toggleBtn = document.getElementsByClassName("toggle-btn")[0];
+    const navLinks = document.getElementsByClassName("nav-links-container")[0];
+    const navLinksAnchor = document.getElementsByClassName("nav-anchor");
+    toggleBtn.addEventListener("click", ()=>{
+        navLinks.classList.toggle("active");
+    });
+    for(var i = 0; i < navLinksAnchor.length; i++)navLinksAnchor[i].addEventListener("click", ()=>{
+        navLinks.classList.remove("active");
+    });
+}
+exports.default = toggleNavBar;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"bhPin":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function navbarObserver() {
@@ -521,10 +557,10 @@ function navbarObserver() {
     const lightBgs = document.querySelectorAll(".light-bg");
     const faders = document.querySelectorAll(".fade-in");
     const lightBgOpt = {
-        rootMargin: "-53px 0px -90% 0px"
+        rootMargin: "-53px 0px -92% 0px"
     };
     const appearOpts = {
-        threshold: 0.7,
+        threshold: 0.5,
         rootMargin: "0px 0px -100px 0px"
     };
     const lightBgObserver = new IntersectionObserver(function(entries, lightBgObserver) {

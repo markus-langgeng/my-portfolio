@@ -1,7 +1,7 @@
 {
   "plugins": {
     "postcss-sort-media-queries": {},
-    "autoprefixer": {},
-    "postcss-preset-env": {}
+    "autoprefixer": {}
+    
   }
 }

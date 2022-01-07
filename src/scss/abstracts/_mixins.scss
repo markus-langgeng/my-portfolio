@@ -47,6 +47,6 @@
 
 // Font Face
 @mixin ff($font, $fallback) {
-    font-family: map.get($fonts, $font);
-    font-family: var(--ff-#{$font}), $fallback;
+    font-family: map.get($fonts, $font), $fallback;
+    font-family: var(--ff-#{$font});
 }

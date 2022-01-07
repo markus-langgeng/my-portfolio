@@ -6,7 +6,6 @@
 
 //hero
 .hero {
-    display: grid;
     @include fs(800);
     padding: 4em 0;
 
@@ -26,7 +25,6 @@
 .project,
 .about-me,
 .contact {
-    display: grid;
     padding: 4em 0;
 
     @include mq(medium) {
@@ -35,7 +33,23 @@
 }
 
 //project
+.container .project {
+    position: relative;
+}
+.project::before {
+    content: url(../img/bg-portfolio2.svg);
+    position: absolute;
+    top: -150px;
+    left: -180px;
+    z-index: -1;
+}
 
+@include mq(medium) {
+    .project::before {
+        top: -65px;
+        left: -200px;
+    }
+}
 .card-title h3 {
     max-width: 15em;
 }

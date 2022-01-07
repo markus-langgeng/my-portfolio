@@ -8,6 +8,8 @@
         <title>Langgeng</title>
         <link rel="stylesheet" href="scss/main.scss" />
         <!-- <link rel="stylesheet" href="../dist/main.css" /> -->
+
+        <script type="module" src="js/main.js" defer></script>
     </head>
     <body>
         <header>
@@ -64,10 +66,9 @@
                         <div class="card-title fade-in">
                             <h3>Website Absensi Karyawan</h3>
                         </div>
-                        <div class="card-img">
+                        <div class="card-img fade-in">
                             <img width="1667" height="1111" 
-                                src="img/absensi-pegawai.png" 
-                                srcset="img/absensi-pegawai.png?as=webp&width=700 500w, img/absensi-pegawai.png?as=webp&width=1000 1000w"
+                                data-lazy="img/absensi-pegawai-1300w.jpeg"
                                 alt="project"
                             ></img>
                         </div>
@@ -100,8 +101,11 @@
                         <div class="card-title fade-in">
                             <h3>Aplikasi Penyewaan Alat Pendakian </h3>
                         </div>
-                        <div class="card-img">
-                            <img width="1667" height="1111" src="https://unsplash.it/500/400" alt="gambar"></img>
+                        <div class="card-img fade-in">
+                            <img width="1667" height="1111" 
+                                data-lazy="https://unsplash.it/500/400"  
+                                alt="gambar"
+                            ></img>
                         </div>
                         <div class="card-text flow fade-in">
                             <p>
@@ -133,7 +137,7 @@
                         <h2>
                             <span id="about-me">About Me</span>
                         </h2>
-                        <p>
+                        <p class="fade-in">
                             Hi, namaku Markus Langgeng Iman Saputra, biasa dipanggil Markus atau Langgeng. Saya tinggal di Malang, Jawa Timur, Indonesia. Saya adalah siswa di SMKN 4, Malang dengan jurusan Rekayasa Perangkat Lunak. Hobi saya adalah menggambar dan membangun web. Saya semangat terus untuk belajar untuk menjadi lebih baik dalam coding dan teknologi.
                         </p>
                         <div class="headshot"> </div>
@@ -171,6 +175,5 @@
                 <p>&copy; Markus Langgeng Iman Saputra 2021</p>
             </div>
         </footer>
-        <script type="module" src="js/main.js"></script>
     </body>
 </html>

@@ -5,10 +5,10 @@ export default function navbarObserver() {
     const faders = document.querySelectorAll(".fade-in");
 
     const lightBgOpt = {
-        rootMargin: "-53px 0px -90% 0px",
+        rootMargin: "-53px 0px -92% 0px",
     };
     const appearOpts = {
-        threshold: 0.7,
+        threshold: 0.5,
         rootMargin: "0px 0px -100px 0px",
     };
 
