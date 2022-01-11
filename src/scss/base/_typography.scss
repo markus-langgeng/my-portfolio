@@ -47,11 +47,8 @@ a {
     @include lh(300);
 }
 
-.contact {
-    p,
-    .p {
-        @include fw(bold);
-    }
+.contact-form p {
+    @include fw(bold);
 }
 
 footer p,
@@ -92,8 +89,4 @@ footer {
 .about-me p,
 footer p {
     color: rgba(hsl(242, 81%, 94%), 0.7);
-}
-
-.text-container p {
-    @include fw(light);
 }

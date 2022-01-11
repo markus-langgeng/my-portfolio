@@ -4,7 +4,12 @@
     ======MAIN======
 */
 
-//hero
+/*clip path*/
+.hero-bg {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3.5vw));
+    margin-bottom: -3.5vw;
+}
+/*hero*/
 .hero {
     @include fs(800);
     padding: 4em 0;
@@ -32,8 +37,8 @@
     }
 }
 
-//project
-.container .project {
+/*project*/
+.project {
     position: relative;
 }
 .project::before {
@@ -67,46 +72,51 @@
     }
 }
 
-//contact
-.contact-form {
+/*contact*/
+
+.contact {
+    position: relative;
+}
+.contact::before {
+    position: absolute;
+    z-index: -1;
+}
+
+.contact {
     display: grid;
-    gap: 2rem 5rem;
+    gap: 1.5rem;
     grid-auto-columns: 1fr;
     grid-template-areas:
-        "name"
-        "email"
-        "message"
+        "heading"
+        "form"
         "text";
 
     @include mq(small) {
         grid-template-areas:
-            "name text"
-            "email text"
-            "message blank";
+            "heading heading"
+            "form text";
     }
 
-    input,
-    textarea {
-        width: 100%;
-        max-width: 30rem;
+    @include mq(medium) {
+        column-gap: 5rem;
     }
 }
 
-.name-container {
-    grid-area: name;
+.contact-heading {
+    grid-area: heading;
 }
-.email-container {
-    grid-area: email;
+
+.contact-form {
+    grid-area: form;
 }
-.message-container {
-    grid-area: message;
-}
-.text-container {
+
+.contact-text {
     grid-area: text;
 }
 
-//footer
+/*footer*/
 footer {
+    margin-top: auto;
     .container {
         display: flex;
     }

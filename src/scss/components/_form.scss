@@ -1,0 +1,71 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
+@use "../base/type-scale" as *;
+
+/*  ======================
+    ===== FORM ITEMS =====
+*/
+.name,
+.email,
+.message {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    @include fs(300);
+    max-width: 30rem;
+    width: 100%;
+}
+
+.contact-form {
+    position: relative;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    max-width: calc(100% + 5.4em);
+    width: 40rem;
+    height: 100%;
+    background: rgba(87, 85, 206, 0.19);
+    left: -3.6rem;
+
+    clip-path: polygon(
+        8% 13%,
+        100% 19%,
+        92% 100%,
+        50% 100%,
+        0 calc(100% - 20px)
+    );
+
+    @include mq(small) {
+        left: -5rem;
+    }
+}
+
+/*send btn*/
+.send-btn {
+    padding: 0.3em 1.5em;
+    background: transparent;
+    border: 3.5px solid;
+    border-radius: 50px;
+    @include clr(border-color, secondary, 300);
+
+    text-transform: uppercase;
+    @include fw(bold);
+    letter-spacing: 0.1em;
+
+    @include clr(color, secondary, 300);
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+}
+
+.send-btn:hover,
+.send-btn:focus {
+    transform: scale(1.1);
+}
+
+.send-btn:active {
+    border-color: white;
+    color: white;
+    @include clr(background, secondary, 300);
+}

@@ -32,7 +32,7 @@
         </header>
 
         <main>
-            <div class="bg-primary-300">
+            <div class="bg-primary-300 hero-bg">
                 <div class="container">
                     <div class="hero flow">
                         <h1 class="hero-title" id="hero">
@@ -45,6 +45,7 @@
                                 class="arrow-svg"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="2 2 20 20"
+                                aria-label="scroll ke bawah"
                             >
                                 <g data-name="Layer 2">
                                     <g data-name="arrow-downward">
@@ -57,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container project-bg">
                 <div class="project flow light-bg">
                     <h2>
                         <span id="project">Project</span>
@@ -68,16 +69,16 @@
                         </div>
                         <div class="card-img fade-in">
                             <img width="1667" height="1111" 
-                                data-lazy="img/absensi-pegawai-1300w.jpeg"
-                                alt="project"
+                                data-lazy="img/absensi-pegawai-1300w.webp"
+                                alt="sebuah laptop yang sedang membuka website absensi karyawan"
                             ></img>
                         </div>
                         <div class="card-text flow fade-in">
                             <p>
-                                Website Absensi Karyawan adalah website yang dibuat untuk memenuhi tugas akhir. Prjoect ini dibuat oleh kelompok dengan 4 anggota, yaitu Ananda, Anisa, Langgeng, dan Faisal. 
+                                Website untuk melakukan absensi/presensi kehadiran karywan, mengelola data pegawai dan absensi. Terdapat Admin yang mendaftarkan pegawai baru dan mengelola data pegawai. Terdapat pegawai yang melakukan absensi.
                             </p>
                             <p>
-                                Website ini digunakan untuk menyimpan dan mengolah data karyawan serta merekam data kehadiran karyawan. Kami menggunakan html, css, bootstrap 5, javascript untuk front-end. Untuk back-end, kami menggunakan php dan mySQL.
+                                Teknologi yang digunakan adalah html, css, javascript, bootstrap 5, php, dan mysql. 
                             </p>
                         </div>
                         <div class="card-links">
@@ -103,8 +104,8 @@
                         </div>
                         <div class="card-img fade-in">
                             <img width="1667" height="1111" 
-                                data-lazy="https://unsplash.it/500/400"  
-                                alt="gambar"
+                                data-lazy="img/mockup pbo ta 1300w.webp"  
+                                alt="sebuah laptop yang membuka aplikasi penyewaan alat pendakian"
                             ></img>
                         </div>
                         <div class="card-text flow fade-in">
@@ -138,7 +139,10 @@
                             <span id="about-me">About Me</span>
                         </h2>
                         <p class="fade-in">
-                            Hi, namaku Markus Langgeng Iman Saputra, biasa dipanggil Markus atau Langgeng. Saya tinggal di Malang, Jawa Timur, Indonesia. Saya adalah siswa di SMKN 4, Malang dengan jurusan Rekayasa Perangkat Lunak. Hobi saya adalah menggambar dan membangun web. Saya semangat terus untuk belajar untuk menjadi lebih baik dalam coding dan teknologi.
+                            Halo, namaku Markus Langgeng Iman Saputra, biasa dipanggil Langgeng atau Markus. Aku tinggal di Malang, Jawa Timur. Sekarang, aku masih ada di SMK mengambil jurusan Rekayasa Perangkat Lunak. Hobiku yaitu menggambar dan membuat sesuatu di komputer seperti membangun website.
+                        </p>
+                        <p class="fade-in">
+                            Aku ingin belajar terus supaya jadi lebih bagus dalam programming ataupun web development.
                         </p>
                         <div class="headshot"> </div>
                     </div>
@@ -146,26 +150,27 @@
             </div>
             <div class="container">
                 <div class="contact flow light-bg">
-                    <h2>
+                    <h2 class="contact-heading">
                         <span id="contact">Contact</span>
                     </h2>
-                    <form class="contact-form" action="" class="flow">
+                    <form class="contact-form flow" action="">
                         <div class="name-container">
                             <label for="name"><p>Name</p></label>
-                            <input type="text" name="nama" id="name">
+                            <input class="name" type="text" name="nama" id="name">
                         </div>
                         <div class="email-container">
                             <label for="email"><p>Email</p></label>
-                            <input type="text" name="email" id="email">
+                            <input class="email" type="text" name="email" id="email">
                         </div>
                         <div class="message-container">
                             <label for="message"><p>Message</p></label>
-                            <textarea name="pesan" id="message" cols="30" rows="10"></textarea>
+                            <textarea class="message" name="pesan" id="message" cols="30" rows="10"></textarea>
                         </div>
-                        <div class="text-container">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, repellendus. myemail@example.com</p>
-                        </div>
+                        <input class="send-btn" type="submit" name="kirim" value="send"></input>
                     </form>
+                    <div class="contact-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, repellendus. myemail@example.com</p>
+                    </div>
                 </div>
             </div>
         </main>

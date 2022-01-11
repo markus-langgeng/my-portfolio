@@ -6,13 +6,17 @@
 .card {
     --flow-space: 3.5em;
     display: grid;
-    gap: 1.5em 5rem;
+    gap: 1.5em;
     grid-auto-columns: 1fr;
     grid-template-areas:
         "title"
         "image"
         "text"
         "links";
+
+    @include mq(medium) {
+        column-gap: 5rem;
+    }
 
     .card-title {
         grid-area: title;
@@ -43,8 +47,9 @@
         box-shadow: 0 3px 23px 0 rgba(0, 0, 0, 0.12);
         img {
             border-radius: 0.8rem;
-            max-width: 100%;
+            width: auto;
             height: auto;
+            max-width: 100%;
         }
     }
     .card-text {
