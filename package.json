@@ -26,18 +26,17 @@
     "@parcel/transformer-sass": "^2.0.1",
     "autoprefixer": "^10.4.0",
     "parcel": "^2.0.1",
+    "parcel-namer-custom": "^0.2.0",
     "parcel-reporter-static-files-copy": "^1.3.4",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "postcss-preset-env": "^7.1.0",
     "postcss-sort-media-queries": "^4.2.1",
-    "postcss-uncss": "^0.17.0",
-    "sass": "^1.45.1",
-    "sharp": "^0.29.3",
-    "uncss": "^0.17.3"
+    "sass": "^1.45.1"
   },
-  "staticFiles": {
-    "staticPath": "src/img",
-    "staticOutPath": "img"     
+  "parcel-namer-custom": {
+    "fonts": "[folder]/[name].[type]",
+    "foto-profil.webp$": "[folder]/[hash].[type]",
+    "img": "[folder]/[name].[hash].[type]"
   }
 }

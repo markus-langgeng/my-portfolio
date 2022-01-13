@@ -8,7 +8,6 @@
 */
 
 body {
-    // font-family: var(--ff-primary, sans-serif);
     @include ff(primary, sans-serif);
 }
 
@@ -16,26 +15,25 @@ h1,
 h2,
 h3 {
     @include ff(secondary, serif);
+    @include fw(semi-bold);
 }
 
 h1,
 .h1 {
     @include fs(800);
-    @include fw(semi-bold);
     @include lh(100);
 }
 
 h2,
 .h2 {
     @include fs(600);
-    @include fw(semi-bold);
+    @include fw(regular);
     @include lh(200);
 }
 
 h3,
 .h3 {
     @include fs(500);
-    @include fw(regular);
     @include lh(200);
 }
 
@@ -48,7 +46,7 @@ a {
 }
 
 .contact-form p {
-    @include fw(bold);
+    @include fw(medium);
 }
 
 footer p,

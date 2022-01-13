@@ -1,6 +1,6 @@
 @use "../abstracts/mixins" as *;
 /*  ==============
-=====CARD=====
+    =====CARD=====
 */
 
 .card {
@@ -16,52 +16,6 @@
 
     @include mq(medium) {
         column-gap: 5rem;
-    }
-
-    .card-title {
-        grid-area: title;
-
-        h3 {
-            display: inline;
-            background-image: linear-gradient(
-                var(--clr-secondary-300),
-                var(--clr-secondary-300)
-            );
-            background-size: 100% 3px;
-            background-repeat: no-repeat;
-            background-position: 0 bottom;
-            // text-decoration: underline blue solid;
-        }
-    }
-    .card-img {
-        grid-area: image;
-        margin-left: auto;
-        margin-right: auto;
-
-        width: fit-content;
-        height: auto;
-        max-height: 25rem;
-
-        overflow: hidden;
-        border-radius: 0.8rem;
-        box-shadow: 0 3px 23px 0 rgba(0, 0, 0, 0.12);
-        img {
-            border-radius: 0.8rem;
-            width: auto;
-            height: auto;
-            max-width: 100%;
-        }
-    }
-    .card-text {
-        grid-area: text;
-    }
-    .card-links {
-        grid-area: links;
-        align-self: start;
-    }
-
-    &-text {
-        --flow-space: 1em;
     }
 
     @include mq(small) {
@@ -84,4 +38,51 @@
             }
         }
     }
+}
+
+.card-title {
+    grid-area: title;
+
+    h3 {
+        display: inline;
+        background-image: linear-gradient(
+            var(--clr-secondary-300),
+            var(--clr-secondary-300)
+        );
+        background-size: 100% 3px;
+        background-repeat: no-repeat;
+        background-position: 0 bottom;
+        padding-bottom: 0.1875em;
+    }
+}
+
+.card-img {
+    grid-area: image;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: fit-content;
+    height: auto;
+    max-height: 25rem;
+
+    overflow: hidden;
+    border-radius: 0.8rem;
+    box-shadow: 0 3px 23px 0 rgba(0, 0, 0, 0.14);
+    img {
+        border-radius: 0.8rem;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+.card-text {
+    grid-area: text;
+}
+.card-links {
+    grid-area: links;
+    align-self: start;
+}
+.card-text {
+    --flow-space: 1em;
 }

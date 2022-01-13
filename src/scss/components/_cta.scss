@@ -16,34 +16,25 @@
 
     border: 5px solid #f4f4ff;
     border-radius: 2.8125rem;
-    @include clr(background, secondary, 300);
+    @include clr(background-color, secondary, 300);
     @include fw(bold);
     @include fs(300);
 
-    transition: all ease-out 300ms;
+    transition: transform ease-in-out 150ms;
 
     &:focus,
     &:hover {
-        transform: scale(1.05) translateY(-3px);
-        @include clr(background, secondary, 400);
+        transform: scale(1.03) translateY(-3px);
+        @include clr(background-color, secondary, 400);
     }
 
     &:active {
-        @include clr(background, secondary, 500);
+        @include clr(background-color, secondary, 500);
     }
 }
 
 .arrow-svg {
     @include clr(fill, gray-scale, light);
-    width: 27px;
-    height: 27px;
-}
-
-// dan svg lain
-.github-svg {
-    width: 30px;
-    height: 30px;
-    fill: white;
 }
 
 .visually-hidden {
@@ -54,3 +45,7 @@
     white-space: nowrap;
     width: 1px;
 }
+
+// .instagram-svg {
+//     border: 1px solid black;
+// }

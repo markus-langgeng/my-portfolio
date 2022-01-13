@@ -11,8 +11,7 @@ header {
     z-index: 999;
 
     background: hsl(0, 0%, 23%);
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.07);
-    transition: background 300ms ease-in;
+    transition: background-color 300ms ease-in;
 }
 nav {
     position: relative;
@@ -24,18 +23,15 @@ nav {
 }
 .nav-links-container {
     position: absolute;
-    top: 3.6em;
     right: 0;
-    grid-column: span 2;
     margin: auto 0;
 
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 200ms ease-in-out 50ms;
+    transform: scale(0, 1);
+    transform-origin: right;
 
     &.active {
+        transition: transform 200ms ease-in-out 50ms;
         transform: scale(1, 1);
-
         a {
             opacity: 1;
             transition: opacity 200ms ease-in-out 300ms;
@@ -44,15 +40,49 @@ nav {
 
     ul {
         text-align: end;
-        padding: 0 1.8em;
-        transition: background 300ms ease-in;
-        @include clr(background, primary, 300);
+        min-width: 9rem;
+
+        display: flex;
+        flex-direction: column;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100vh;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15);
+
+            transition: background-color 300ms ease-in;
+            @include clr(background-color, primary, 300);
+        }
+
+        @include mq(small) {
+            flex-direction: row;
+
+            &::before {
+                all: unset;
+            }
+        }
     }
 
     li {
         position: relative;
         margin-left: auto;
         width: fit-content;
+        margin-right: 1.8em;
+
+        &:first-of-type {
+            padding-top: 4em;
+        }
+
+        @include mq(small) {
+            margin-right: unset;
+
+            &:first-of-type {
+                padding-top: unset;
+            }
+        }
     }
 
     a {
@@ -70,7 +100,7 @@ nav {
         height: 2px;
         width: 100%;
         bottom: 5px;
-        @include clr(background, secondary, 200);
+        @include clr(background-color, secondary, 200);
 
         position: absolute;
         left: 0;
@@ -87,7 +117,7 @@ nav {
         transform: scale(1, 1);
     }
     a:active::after {
-        @include clr(background, secondary, 100);
+        @include clr(background-color, secondary, 100);
     }
     a:active {
         @include clr(color, secondary, 100);
@@ -100,7 +130,7 @@ nav {
         ul {
             display: flex;
             justify-content: flex-end;
-            background: unset;
+            background-color: unset;
         }
         a {
             opacity: 1;
@@ -111,6 +141,8 @@ nav {
 
 .toggle-btn {
     margin-left: auto;
+    z-index: 9;
+    cursor: pointer;
     @include mq(small) {
         display: none;
     }
@@ -123,9 +155,9 @@ nav {
         @include clr(color, gray-scale, dark);
     }
     .bar {
-        @include clr(background, gray-scale, dark);
+        @include clr(background-color, gray-scale, dark);
     }
-    ul {
-        background: hsl(240, 100%, 98%);
+    ul::before {
+        background-color: hsl(240, 100%, 98%);
     }
 }

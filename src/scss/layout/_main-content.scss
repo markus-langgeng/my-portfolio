@@ -4,11 +4,6 @@
     ======MAIN======
 */
 
-/*clip path*/
-.hero-bg {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3.5vw));
-    margin-bottom: -3.5vw;
-}
 /*hero*/
 .hero {
     @include fs(800);
@@ -58,8 +53,7 @@
 .card-title h3 {
     max-width: 15em;
 }
-.card-description,
-.about-me p {
+.card-description {
     max-width: 25em;
 }
 
@@ -72,8 +66,49 @@
     }
 }
 
-/*contact*/
+/*about*/
+.about-me {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-areas:
+        "heading"
+        "text"
+        "headshot";
 
+    @include mq(small) {
+        grid-template-columns: 65% auto;
+        grid-template-areas:
+            "heading headshot"
+            "text headshot";
+    }
+
+    h2 {
+        grid-area: heading;
+    }
+
+    p {
+        grid-area: text;
+        max-width: 35rem;
+    }
+}
+
+.headshot {
+    width: fit-content;
+    height: auto;
+    max-width: 15rem;
+
+    img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+    }
+
+    grid-area: headshot;
+    align-self: center;
+    justify-self: center;
+}
+
+/*contact*/
 .contact {
     position: relative;
 }
@@ -86,19 +121,20 @@
     display: grid;
     gap: 1.5rem;
     grid-auto-columns: 1fr;
+
     grid-template-areas:
         "heading"
         "form"
         "text";
 
+    @include mq(medium) {
+        column-gap: 5rem;
+    }
+
     @include mq(small) {
         grid-template-areas:
             "heading heading"
             "form text";
-    }
-
-    @include mq(medium) {
-        column-gap: 5rem;
     }
 }
 
@@ -112,6 +148,19 @@
 
 .contact-text {
     grid-area: text;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+
+    &-item {
+        display: flex;
+    }
+}
+
+* + .social-link-item {
+    margin-left: 1em;
 }
 
 /*footer*/
