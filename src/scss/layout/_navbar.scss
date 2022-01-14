@@ -28,9 +28,13 @@ nav {
 
     transform: scale(0, 1);
     transform-origin: right;
+    visibility: hidden;
+    @include mq(small) {
+        visibility: visible !important;
+    }
 
     &.active {
-        transition: transform 200ms ease-in-out 50ms;
+        transition: transform 180ms ease-in-out 50ms;
         transform: scale(1, 1);
         a {
             opacity: 1;
@@ -78,9 +82,11 @@ nav {
 
         @include mq(small) {
             margin-right: unset;
-
             &:first-of-type {
                 padding-top: unset;
+            }
+            &:last-of-type {
+                margin-right: 1.8em;
             }
         }
     }
@@ -91,21 +97,22 @@ nav {
         padding: 1em 0;
         width: 100%;
         opacity: 0;
-        transition: transform ease-in-out 200ms, opacity 120ms ease-in-out;
+        transition: transform 200ms ease-in-out, opacity 120ms ease-in-out;
     }
 
     a::after {
         content: "";
         display: inline-block;
+        position: absolute;
         height: 2px;
         width: 100%;
-        bottom: 5px;
-        @include clr(background-color, secondary, 200);
-
-        position: absolute;
+        bottom: 9px;
         left: 0;
+
         transform: scale(0, 1);
-        transition: all ease-in-out 300ms;
+
+        transition: transform ease-in-out 300ms;
+        @include clr(background-color, secondary, 200);
     }
 
     a:hover,

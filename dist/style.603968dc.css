@@ -13,7 +13,6 @@
   font-style: normal;
   font-display: swap;
 }
-/* montserrat-300 - latin */
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -21,7 +20,6 @@
   src: local(""), url("fonts/montserrat-v18-latin-300.woff") format("woff");
   font-display: swap;
 }
-/* montserrat-regular - latin */
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -29,7 +27,6 @@
   src: local(""), url("fonts/montserrat-v18-latin-regular.woff") format("woff");
   font-display: swap;
 }
-/* montserrat-500 - latin */
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -37,7 +34,6 @@
   src: local(""), url("fonts/montserrat-v18-latin-500.woff") format("woff");
   font-display: swap;
 }
-/* montserrat-600 - latin */
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -451,9 +447,10 @@ nav {
   margin: auto 0;
   transform: scale(0, 1);
   transform-origin: right;
+  visibility: hidden;
 }
 .nav-links-container.active {
-  transition: transform 200ms ease-in-out 50ms;
+  transition: transform 180ms ease-in-out 50ms;
   transform: scale(1, 1);
 }
 .nav-links-container.active a {
@@ -494,20 +491,20 @@ nav {
   padding: 1em 0;
   width: 100%;
   opacity: 0;
-  transition: transform ease-in-out 200ms, opacity 120ms ease-in-out;
+  transition: transform 200ms ease-in-out, opacity 120ms ease-in-out;
 }
 .nav-links-container a::after {
   content: "";
   display: inline-block;
+  position: absolute;
   height: 2px;
   width: 100%;
-  bottom: 5px;
-  background-color: #706ee2;
-  background-color: var(--clr-secondary-200);
-  position: absolute;
+  bottom: 9px;
   left: 0;
   transform: scale(0, 1);
-  transition: all ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  background-color: #706ee2;
+  background-color: var(--clr-secondary-200);
 }
 .nav-links-container a:hover,
 .nav-links-container a:focus {
@@ -725,6 +722,9 @@ footer {
   .contact::before {
     left: -5rem;
   }
+  .nav-links-container {
+    visibility: visible !important;
+  }
   .nav-links-container ul {
     flex-direction: row;
   }
@@ -736,6 +736,9 @@ footer {
   }
   .nav-links-container li:first-of-type {
     padding-top: unset;
+  }
+  .nav-links-container li:last-of-type {
+    margin-right: 1.8em;
   }
   .nav-links-container {
     transform: scale(1, 1);
@@ -884,4 +887,4 @@ a {
     scroll-behavior: auto !important;
   }
 }
-/*# sourceMappingURL=index.603968dc.css.map */
+/*# sourceMappingURL=style.603968dc.css.map */

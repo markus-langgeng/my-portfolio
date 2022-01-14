@@ -19,11 +19,11 @@
         <header>
             <nav class="container">
                 <a class="logo" href="/">Langgeng</a>
-                <a class="toggle-btn">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
+                <button 
+                class="toggle-btn"
+                aria-label="Buka atau tutup menu navigasi">
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
                 <div class="nav-links-container">
                     <ul>
                         <li><a class="nav-anchor" href="#hero">Home</a></li>
@@ -159,6 +159,7 @@
                         <div class="headshot">
                             <!-- width="2328" height="3104"  -->
                             <img width="320" height="427" 
+                            loading="lazy"
                             src="img/foto-profil.webp" 
                             alt="Foto Profil Langgeng">
                         </div>

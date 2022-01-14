@@ -37,6 +37,8 @@
   "parcel-namer-custom": {
     "fonts": "[folder]/[name].[type]",
     "foto-profil.webp$": "[folder]/[hash].[type]",
-    "img": "[folder]/[name].[hash].[type]"
+    "img": "[folder]/[name].[hash].[type]",
+    ".scss$": "style.[hash].[type]",
+    "js$": "script.[hash].[type]"
   }
 }
