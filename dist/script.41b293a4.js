@@ -483,9 +483,8 @@ function toggleNavBar() {
         if (!(x.matches && navLinks.classList.contains("active"))) return;
         else {
             navLinks.classList.remove("active");
-            // navLinks.style.display = "none";
             navLinks.style.visibility = "hidden";
-            console.log("x matches");
+            toggleBtn.classList.remove("ham-opened");
         }
     }
     smallBp.addEventListener("change", displayBlock);
@@ -494,21 +493,21 @@ function toggleNavBar() {
     toggleBtn.addEventListener("click", ()=>{
         if (navLinks.classList.contains("active")) {
             navLinks.classList.remove("active");
-            // navLinks.style.display = "none";
             navLinks.style.visibility = "hidden";
+            toggleBtn.classList.remove("ham-opened");
             toggleBtn.setAttribute("aria-expandend", "false");
         } else {
             navLinks.classList.add("active");
-            // navLinks.style.display = "block";
             navLinks.style.visibility = "visible";
+            toggleBtn.classList.add("ham-opened");
             toggleBtn.setAttribute("aria-expandend", "true");
         }
     });
     //tutup ham menu klo link di klik
     for(var i = 0; i < navLinksAnchor.length; i++)navLinksAnchor[i].addEventListener("click", ()=>{
         navLinks.classList.remove("active");
-        // navLinks.style.display = "none";
         navLinks.style.visibility = "hidden";
+        toggleBtn.classList.remove("ham-opened");
     });
 }
 exports.default = toggleNavBar;

@@ -65,10 +65,12 @@ nav {
     }
     a {
         text-decoration: none;
-        @include clr(color, gray-scale, light);
     }
     .logo {
         @include fw(bold);
+    }
+    .nav-anchor,
+    .logo {
         @include clr(color, gray-scale, light);
     }
 }

@@ -40,5 +40,8 @@
     "img": "[folder]/[name].[hash].[type]",
     ".scss$": "style.[hash].[type]",
     "js$": "script.[hash].[type]"
+  },
+  "staticFiles": {
+    "staticPath": "robots"
   }
 }

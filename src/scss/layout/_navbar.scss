@@ -34,11 +34,11 @@ nav {
     }
 
     &.active {
-        transition: transform 180ms ease-in-out 50ms;
+        transition: transform 150ms ease-in-out 400ms;
         transform: scale(1, 1);
         a {
             opacity: 1;
-            transition: opacity 200ms ease-in-out 300ms;
+            transition: opacity 200ms ease-in-out 600ms;
         }
     }
 
@@ -147,7 +147,6 @@ nav {
 }
 
 .toggle-btn {
-    margin-left: auto;
     z-index: 9;
     cursor: pointer;
     @include mq(small) {
@@ -161,7 +160,9 @@ nav {
     a {
         @include clr(color, gray-scale, dark);
     }
-    .bar {
+    .bar,
+    .bar::before,
+    .bar::after {
         @include clr(background-color, gray-scale, dark);
     }
     ul::before {

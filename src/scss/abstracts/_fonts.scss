@@ -48,6 +48,13 @@
     src: local(""), url("../fonts/montserrat-v18-latin-600.woff") format("woff");
     font-display: swap;
 }
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: local(""), url("../fonts/montserrat-v18-latin-700.woff") format("woff");
+    font-display: swap;
+}
 
 $fonts: (
     primary: "Montserrat",
