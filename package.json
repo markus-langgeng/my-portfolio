@@ -6,10 +6,11 @@
   "targets": {
     "main": false
   },
+  "source": ["src/index.html", "src/contact-success.html"],
   "scripts": {
-    "sass": "sass -w src/scss:dist",
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-source-maps --public-url ."
+    "sass": "sass -w",
+    "dev": "parcel",
+    "build": "parcel build --no-source-maps --public-url ."
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,6 @@
     ".js$": "script.[hash].[type]"
   },
   "staticFiles": {
-    "staticPath": "others"
+    "staticPath": "robot"
   }
 }

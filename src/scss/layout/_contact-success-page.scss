@@ -1,0 +1,46 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/colors" as *;
+
+/*  =====================
+    ===CONTACT SUCCESS===
+*/
+.csuccess-body {
+    display: flex;
+    flex-direction: column;
+}
+.csuccess-main {
+    margin: 4em auto 0;
+}
+.thanks {
+    --flow-space: 2em;
+    @include fs(800);
+    padding: 4em 0;
+    &-title {
+        max-width: 10em;
+    }
+
+    @include mq(medium) {
+        padding: 2em 0;
+
+        &-title {
+            max-width: 10em;
+        }
+    }
+
+    p {
+        --fs-400: 1.3rem;
+
+        @include mq(small) {
+            --fs-400: 1.6rem;
+            @include lh(200);
+        }
+    }
+
+    .cta {
+        @include fs(400);
+        width: fit-content;
+        color: rgb(235, 235, 235);
+        box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        padding-bottom: 0.1em;
+    }
+}
