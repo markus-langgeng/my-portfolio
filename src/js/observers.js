@@ -1,6 +1,18 @@
 export default function navbarObserver() {
     const header = document.querySelector("header");
     const lightBgs = document.querySelectorAll(".light-bg");
+    const fadedDivs = document.querySelectorAll(".fade-in");
+
+    //check browserSupport for intersectionObserver
+    if (
+        !("IntersectionObserver" in window) ||
+        !("IntersectionObserverEntry" in window) ||
+        !("intersectionRatio" in window.IntersectionObserverEntry.prototype)
+    ) {
+        fadedDivs.forEach((div) => {
+            div.classList.remove("fade-in");
+        });
+    }
 
     const faders = document.querySelectorAll(".fade-in");
 

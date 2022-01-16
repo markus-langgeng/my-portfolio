@@ -1,5 +1,5 @@
-import toggleNavBar from "./ham-menu";
-import navbarObserver from "./observers";
+import toggleNavBar from "./ham-menu.js";
+import navbarObserver from "./observers.js";
 
 toggleNavBar();
 navbarObserver();

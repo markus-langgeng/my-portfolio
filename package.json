@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio",
   "version": "1.0.0",
-  "description": "Heyy, ini website portfolioku",
+  "description": "Portfolio Website package",
   "main": "index.js",
   "targets": {
     "main": false
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/markus-langgeng/my-portfolio#readme",
   "devDependencies": {
+    "@parcel/compressor-brotli": "^2.2.0",
+    "@parcel/compressor-gzip": "^2.2.0",
     "@parcel/transformer-sass": "^2.0.1",
     "autoprefixer": "^10.4.0",
     "parcel": "^2.0.1",
@@ -35,11 +37,11 @@
     "sass": "^1.45.1"
   },
   "parcel-namer-custom": {
-    "fonts": "[folder]/[name].[type]",
+    "fonts": "[folder]/[name].[hash].[type]",
     "foto-profil.webp$": "[folder]/[hash].[type]",
     "img": "[folder]/[name].[hash].[type]",
     ".scss$": "style.[hash].[type]",
-    "js$": "script.[hash].[type]"
+    ".js$": "script.[hash].[type]"
   },
   "staticFiles": {
     "staticPath": "robots"
