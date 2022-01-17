@@ -6,7 +6,7 @@
   "targets": {
     "main": false
   },
-  "source": ["src/index.html", "src/success/contact-success.html"],
+  "source": ["src/index.html", "src/contact-success.html"],
   "scripts": {
     "sass": "sass -w",
     "dev": "parcel",
