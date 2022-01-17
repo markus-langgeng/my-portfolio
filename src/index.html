@@ -170,7 +170,10 @@
                     <h2 class="contact-heading" lang="en">
                         <span id="contact">Contact</span>
                     </h2>
-                    <form class="contact-form flow" method="POST" name="Contact Form" action="/contact-success.html" data-netlify="true">
+                    <form class="contact-form flow" method="POST" name="Contact Form" action="/contact-success.html" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field">
+                        <div class="hidden">
+                            <label>Jangan diisi kalau Anda bukan bot <input name="bot-field" /></label>
+                        </div>
                         <div class="name-container">
                             <label for="name"><p lang="en">Name</p></label>
                             <input class="name" type="text" name="Name" id="name" autocomplete="off" required>
@@ -183,6 +186,7 @@
                             <label for="message"><p lang="en">Message</p></label>
                             <textarea class="message" name="Message" id="message" rows="10" autocomplete="off" required></textarea>
                         </div>
+                        <div data-netlify-recaptcha="true"></div>
                         <input class="send-btn" type="submit" name="kirim" value="send"></input>
                     </form>
                     <div class="contact-text flow fade-in">
