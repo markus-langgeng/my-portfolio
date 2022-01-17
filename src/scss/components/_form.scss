@@ -10,10 +10,11 @@
 .message {
     border: none;
     border-radius: 5px;
-    padding: 0.5em;
+    padding: 0.3em 0.5em;
     @include fs(300);
     max-width: 30rem;
     width: 100%;
+    border: 3px solid white;
 }
 
 .contact-form {
@@ -68,4 +69,8 @@
 .send-btn:active {
     color: white;
     @include clr(background-color, secondary, 200);
+}
+
+.hidden {
+    display: none;
 }
