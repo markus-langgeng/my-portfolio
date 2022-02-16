@@ -1,8 +1,8 @@
 @use "../abstracts/" as *;
-@use "../base/type-scale" as *;
+@use "../type-scale" as *;
 
 :root {
-    /*  
+  /*  
     .
 
     @each -> utk loop
@@ -18,34 +18,34 @@
     $value itu yg -> hsl(.., .., ..)
     .
     */
-    @each $color, $shades in $colors {
-        @each $shades, $value in $shades {
-            --clr-#{$color}-#{$shades}: #{$value};
+  @each $color, $shades in $colors {
+    @each $shades, $value in $shades {
+      --clr-#{$color}-#{$shades}: #{$value};
+    }
+  }
+
+  @each $font-family, $value in $fonts {
+    --ff-#{$font-family}: #{$value};
+  }
+
+  @each $weight, $value in $font-weight {
+    --fw-#{$weight}: #{$value};
+  }
+
+  @each $breakpoint, $height in $line-height {
+    @if $breakpoint == small {
+      @each $height, $value in $height {
+        --lh-#{$height}: #{$value};
+      }
+    } @else {
+      @include mq(medium) {
+        @each $height, $value in $height {
+          --lh-#{$height}: #{$value};
         }
+      }
     }
-
-    @each $font-family, $value in $fonts {
-        --ff-#{$font-family}: #{$value};
-    }
-
-    @each $weight, $value in $font-weight {
-        --fw-#{$weight}: #{$value};
-    }
-
-    @each $breakpoint, $height in $line-height {
-        @if $breakpoint == small {
-            @each $height, $value in $height {
-                --lh-#{$height}: #{$value};
-            }
-        } @else {
-            @include mq(medium) {
-                @each $height, $value in $height {
-                    --lh-#{$height}: #{$value};
-                }
-            }
-        }
-    }
-    /*
+  }
+  /*
     .
     @each -> utk loop
     utk $screen-size, $font-size, sebetulnya namanya terserah.
@@ -61,19 +61,19 @@
     .
     */
 
-    @each $screen-size, $font-size in $type-scale {
-        @if $screen-size == small {
-            //jadi, utk yg screen-size kecil
-            @each $size, $value in $font-size {
-                --fs-#{$size}: #{$value};
-            }
-        } @else {
-            @include mq(medium) {
-                //utk screen-size bukan kecil
-                @each $size, $value in $font-size {
-                    --fs-#{$size}: #{$value};
-                }
-            }
+  @each $screen-size, $font-size in $type-scale {
+    @if $screen-size == small {
+      //jadi, utk yg screen-size kecil
+      @each $size, $value in $font-size {
+        --fs-#{$size}: #{$value};
+      }
+    } @else {
+      @include mq(medium) {
+        //utk screen-size bukan kecil
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
         }
+      }
     }
+  }
 }
