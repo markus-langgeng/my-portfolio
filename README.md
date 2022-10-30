@@ -21,3 +21,4 @@ utk pake parcel 2 caranya kyk yg ada di bwh ini:
         npm run dev
         npm run build
 Test pull request
+Stlh buat fork, trus clone di komputer, kita bisa push perubahannya ke fork repo yg barusan dibuat.
