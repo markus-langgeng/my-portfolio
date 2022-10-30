@@ -20,3 +20,4 @@ utk pake parcel 2 caranya kyk yg ada di bwh ini:
     utk run package script:
         npm run dev
         npm run build
+Test pull request
